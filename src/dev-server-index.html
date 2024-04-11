@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Refiber + Vite</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <style>
+          .bg-animation:after{content:"";--angle:0deg;border-radius:.6rem;position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;background-image:linear-gradient(to right,var(--tw-gradient-stops));--tw-gradient-from:#6366f1 var(--tw-gradient-from-position);--tw-gradient-to:rgb(99 102 241 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to);--tw-gradient-to:rgb(168 85 247 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#a855f7 var(--tw-gradient-via-position),var(--tw-gradient-to);--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}@property --angle{syntax:"<angle>";initial-value:0deg;inherits:false}@keyframes rotate-animation{to{--angle:360deg}}@supports (background:paint(houdini)){.bg-animation:after{animation:3s linear infinite rotate-animation;background:linear-gradient(var(--angle),#ec4899,#407cff,#ec4899,#6366f1)}}
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="antialiased bg-black">
+      <main class="w-full flex min-h-screen justify-center items-center bg-black text-white antialiased py-12">
+				<div class="relative rounded-lg p-[4px] bg-animation">
+					<div class="rounded-lg z-50 relative bg-black p-10 w-[500px]">
+            Refiber + Vite 
+          </div>
+        </div>
+      </main>
+    </body>
+</html>

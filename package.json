@@ -1,0 +1,56 @@
+{
+  "name": "refiber-vite-plugin",
+  "version": "1.0.0",
+  "description": "Refiber plugin for vite.",
+  "scripts": {
+    "build": "npm run build-plugin",
+    "build-plugin": "rm -rf dist && npm run build-plugin-types && npm run build-plugin-esm && cp src/dev-server-index.html dist/",
+    "build-plugin-types": "tsc --emitDeclarationOnly",
+    "build-plugin-esm": "esbuild src/index.ts --platform=node --format=esm --outfile=dist/index.js",
+    "lint": "eslint --ext .ts ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "refiber",
+    "vite",
+    "vite-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/refiber/vite-plugin"
+  },
+  "contributors": [
+    "Kevin Adam <adam@bykevin.work>"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "peerDependencies": {
+    "vite": "^5.1.5"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5"
+  },
+  "dependencies": {
+    "picocolors": "^1.0.0",
+    "vite-plugin-full-reload": "^1.1.0"
+  }
+}
